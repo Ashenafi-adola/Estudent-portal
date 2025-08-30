@@ -1,0 +1,64 @@
+{% extends 'Estudent/base.html' %}
+{% block content_header %}
+<p style="margin: 10px; display: inline;">Upcoming Events</p>
+{% endblock %}
+
+{% block content %}
+<style>
+    .events-list {
+        height: auto;
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        padding: 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    }
+    .photo {
+        vertical-align: top;
+        min-width: 200px;
+        min-height: 250px;
+        height: auto;
+        max-width: 1fr;
+        margin: 10px;
+        display: flex;
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+    .stud-info {
+        height: auto;
+        max-width: 400px;
+        margin: 2px;
+        justify-content: space-between;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .stud-info p{
+        margin: 8px;
+        padding: 2px;
+    }
+    
+</style>
+<div class="events-list">
+    <div class="photo">
+        <img src="C:\Users\Ashu\Desktop\Django\E-Student Portal\portal\Myapp\templates\Myapp\logo.jpg" alt="">
+    </div>
+    <div class="details">
+        <div class="stud-info">
+            <p ><b>Full Name: </b>{{a.Name}} {{a.Father}} {{a.GrandFather}}</p>
+            <p ><b>ID Number:</b> {{a.IdentityCard}}</p>
+            <p ><b>Admission Year:</b> 2025/2026</p>
+            <p><b>Dormitary: </b>B371 R49</p>
+        </div>
+        <div class="stud-info">
+            <p ><b>Program: </b>Freshman</p>
+            <p ><b>Admission:</b> {{a.No}}</p>
+            <p ><b>Class Year:</b> 2025/2026</p>
+            <p><b>Section: </b>B371 R49</p>
+    </div>
+    </div>
+    
+    <div class="events-list">
+
+    </div>
+</div>
+{% endblock %}

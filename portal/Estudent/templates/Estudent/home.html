@@ -1,0 +1,71 @@
+{% extends 'Estudent/base.html' %}
+{% block content_header %}
+<p style="margin: 10px; display: inline;">Upcoming Events</p>
+{% endblock %}
+
+{% block content %}
+<style>
+    .events-list {
+        height: auto;
+        display: flex;
+        border: solid rgb(189, 189, 189) 1px;
+        margin: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+    .photo{
+        width: 170px;
+        height: 170px;
+        max-width: 300px;
+        max-height: 1fr;
+        display: inline-block;
+        border: solid rgb(163, 163, 163) 1px;
+        flex-grow: 0.7;
+        margin-bottom: 10px;
+    }
+    .details{
+        height: auto;
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        flex-wrap: wrap;
+        flex-grow: 2;
+    }
+    .stud-info{
+        height: auto;
+        flex-grow: 5;
+        margin: 0px;
+        display: inline-block;
+        margin-left: 10px;
+        padding: 0px;
+    }
+    .events{
+        width: 100%;
+        min-height: 50px;
+    }
+    
+</style>
+<div class="events-list">
+    <div class="photo">
+        <img src="C:\Users\Ashu\Desktop\Django\E-Student Portal\portal\Myapp\templates\Myapp\logo.jpg" alt="">
+    </div>
+    <div class="details">
+        <div class="stud-info">
+            <p ><b>Full Name: </b>{{a.Name}} {{a.Father}} {{a.GrandFather}}</p>
+            <p ><b>ID Number:</b> {{a.IdentityCard}}</p>
+            <p ><b>Admission Year:</b> 2025/2026</p>
+            <p><b>Dormitary: </b>B371 R49</p>
+        </div>
+        <div class="stud-info">
+            <p ><b>Program: </b>Freshman</p>
+            <p ><b>Admission:</b> {{a.No}}</p>
+            <p ><b>Class Year:</b> 2025/2026</p>
+            <p><b>Section: </b>B371 R49</p>
+    </div>
+    </div>
+    
+    <div class="events">
+
+    </div>
+</div>
+{% endblock %}

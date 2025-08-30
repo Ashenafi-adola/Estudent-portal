@@ -1,0 +1,117 @@
+{% extends 'Estudent/base.html' %}
+{% load static %}
+{% block content_header %}
+<p style="margin: 10px; display: inline;">Student Profile</p>
+{% endblock %}
+
+{% block content %}
+<style>
+    .photo{
+        width: 120px;
+        height: 256px;
+        max-width: 300px;
+        max-height: 300px;
+        display: inline-block;
+        border: solid black 1px;
+        flex-grow: 1;
+    }
+    .details{
+        height: auto;
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        flex-wrap: wrap;
+        flex-grow: 2;
+    }
+    .stud-info{
+        height: auto;
+        flex-grow: 2;
+        margin: 0px;
+        display: inline-block;
+        padding: 0px;
+    }
+    .photo img {
+        width: 100%;
+        overflow: hidden;
+    }
+    .stud-info p{
+        margin: 8px;
+        padding: 2px;
+    }
+    .links {
+        flex-wrap: wrap;
+        margin: 20px;
+        height: auto;
+        grid-template-columns: repeat(auto-fit, minmax(120,1fr));
+        
+    }
+    .links a {
+        margin: 10px;
+        padding: 10px;
+        height: 20px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    .info{
+        height: auto;
+        display: flex;
+        border: solid rgb(224, 224, 224) 1px;
+        margin: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+
+    }
+    .Edit{
+        width: 100%;
+        border: none;
+        text-align: left;
+        padding: 9px;
+        background-color: rgb(236, 236, 236);
+        box-shadow: 5px 5px 4px rgba(180, 180, 180, 0.4);
+        margin: 0px;
+        font-size: 17px;
+    }
+    .Edit:hover{
+        background-color: rgb(230, 230, 230);
+    }
+</style>
+<div class="links">
+    <a href="">Personal</a>
+    <a href="">Applicant</a>
+    <a href="">Contact Address</a>
+    <a href="">Emergency Contact</a>
+    <a href="">Family Background</a>
+    <a href="">Education</a>
+    <a href="">Expriance</a>
+    <a href="">Program Preferance</a>
+</div>
+<div class="info">
+    <div class="photo">
+        <img src="{{a.Photo}}" alt="">
+    </div>
+    <div class="details">
+        <div class="stud-info">
+            <p ><b>User: </b>{{a.IdentityCard}}</p>
+            <p ><b>First Name:</b> {{a.Name}}</p>
+            <p ><b>Father Name:</b> {{a.Father}}</p>
+            <p><b>Grand Father Name: </b>{{a.GrandFather}}</p>
+            <p><b>ሙሉ ስም: </b></p>
+            <p><b>Gender: </b>{{a.Gender}}</p>
+            <p><b>Marital Status: </b>{{a.MaritalStatus}}</p>
+        </div>
+        <div class="stud-info">
+            <p ><b>Nationality: </b>{{a.Nationality}}</p>
+            <p ><b>Region:</b> {{a.Region}}</p>
+            <p ><b>Disablity:</b> {{a.Disability}}</p>
+            <p><b>Date Of Birth: </b>{{a.DateOfBirth}}</p>
+            <p><b>Full Name In Amharic: </b></p>
+            <p><b>Place Of Birth: </b>{{a.PlaceOfBirth}}</p>
+        </div>
+    </div>
+</div>
+<div class="Update">
+    <button class="Edit">Edit</button>
+</div>
+
+    
+{% endblock %}
