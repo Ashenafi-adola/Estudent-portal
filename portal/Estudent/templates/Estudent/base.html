@@ -15,14 +15,37 @@
             left: 0px;
             box-shadow:  1px 1px 3px rgb(155, 155, 155);
             height: 100%;
+            padding: 0px;
             position: fixed;
         }
         .sidenav a{
             display: block;
-            text-decoration: none;
-            margin: 9px;
-            padding: 2px;
+            text-decoration: none;  
+            padding: 9px;
             font-family: Arial, Helvetica, sans-serif;
+            color: rgb(0, 0, 0);
+            margin-left: 0px;
+            cursor: pointer;
+        }
+        .sidenav a:hover{
+            background-color: rgb(231, 231, 231);
+        }
+        .logo {
+            width: 100%;
+            height: 70px;
+            text-align: center;
+            padding: 2px;
+        }
+        .logo img {
+            width: 100px;
+            height: 80px;
+            margin: 0px;
+        }
+        .logo a:hover{
+            background-color: white;
+        }
+        br{
+            margin: 0px;
         }
         .main{
             width: calc(100% - 220px);
@@ -46,17 +69,21 @@
             margin-top: 65px;
             margin-left: 230px;
             padding-bottom: 2px;
+            border-radius: 4px;
         }
         .content-header{
             background-color: #17a2b8;
             height: 40px;
+            border-radius: 4px;
+            display: flex;
+            color: white;
         }
     </style>
 </head>
 <body>
     <div class="sidenav">
         <div class="logo">
-            <a href="/home/" class="tohome"><img src="{% static 'astu_logo.svg' %}" alt="logo" ></a>
+            <a href="/home/" class="tohome"><img src="{% static 'Estudent/astu_logo.svg' %}" alt="logo" ></a>
         </div>
         <br>
         <hr>
@@ -92,18 +119,12 @@
         var content = document.querySelector(".content")
         if (sidenav.style.display === "none") {
             sidenav.style.display = "block";
-           // sidenav.style.width = "0px";
-          //  main.style.marginLeft = "0px";
             main.style.width = "calc(100% - 220px)";
             mainbar.style.width = "calc(100% - 220px)";
             content.style.marginLeft = "230px";
             
         } else {
             sidenav.style.display = "none";
-            //sidenav.style.width = "220px";
-            //main.style.marginLeft = "220px";
-            //
-            //
             content.style.marginLeft = "15px";
             main.style.width = "100%";
             mainbar.style.width = "100%";
