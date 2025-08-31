@@ -8,10 +8,9 @@ def login(response):
     global key
     key = 0
     stud = Student_informations.objects.all()
-    if response.method == 'GET':
+    if response.method == 'POST':
         for  i in stud:
-            if i.IdentityCard == response.GET.get("Username") and i.Password == response.GET.get("password"):
-                print(i.IdentityCard)
+            if i.IdentityCard == response.POST.get("Username") and i.Password == response.POST.get("password"):
                 key = i.id
                 return HttpResponseRedirect(f"/home/")
 
@@ -26,7 +25,6 @@ def registration(response):
         
     if response.method == 'POST':
         form = RegistForm(response.POST, response.FILES)
-        print(response.POST)
         if response.POST.get('Password') == response.POST.get('Password_confirmation'):
             stud = Student_informations(
                 Name = response.POST.get("First_name"),
@@ -56,3 +54,6 @@ def home(respose):
 def studentProfile(response):
     a = Student_informations.objects.get(id=key)
     return render(response, "Estudent/studprof.html", {"a":a,"id":key})
+def appilicant(responmse):
+    a = Student_informations.objects.get(id = key)
+    return render(responmse, "Estudent/applicant.html", {"a":a, "id":key})
