@@ -8,9 +8,9 @@ def login(response):
     global key
     key = 0
     stud = Student_informations.objects.all()
-    if response.method == 'POST':
+    if response.method == 'GET':
         for  i in stud:
-            if i.IdentityCard == response.POST.get("Username") and i.Password == response.POST.get("password"):
+            if i.IdentityCard == response.GET.get("Username") and i.Password == response.GET.get("password"):
                 key = i.id
                 return HttpResponseRedirect(f"/home/")
 
